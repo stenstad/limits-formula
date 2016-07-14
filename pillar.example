@@ -1,0 +1,38 @@
+An example
+==========
+
+limits:
+  container_host:
+    - domain: "*"
+      type: soft
+      item: nofile
+      value: 8192
+    - domain: "*"
+      type: hard
+      item: nofile
+      value: 8192
+
+
+This generates
+==============
+
+#<domain>      <type>  <item>         <value>
+#
+*  soft    nofile    8192
+*  hard    nofile    8192
+
+More details
+============
+
+limits:
+  <section-name>:  # <- this is here so you can merge multiple "limits" definitions together
+    - domain: "*"
+      type: soft
+      item: nofile
+      value: 8192
+      file: container_host.conf   # Overwrite the destination filename here - default is "salt.conf"
+    - domain: "*"
+      type: hard
+      item: nofile
+      value: 8192
+      file: container_host.conf

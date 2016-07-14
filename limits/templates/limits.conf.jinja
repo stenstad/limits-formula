@@ -1,0 +1,7 @@
+# This file is managed by salt, do not edit!
+#
+#<domain>      <type>  <item>         <value>
+#
+{%- for entry in data %}
+{{ entry.domain }}  {{ entry.type }}    {{ entry.item }}    {{ entry.value }}
+{%- endfor -%}
